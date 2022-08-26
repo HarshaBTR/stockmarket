@@ -1,13 +1,13 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<h1 [ngStyle]="headerStyle">Stock Management</h1>
+<div [ngStyle]="headerStyle"><h1 class="center">Stock Management</h1></div>
   <div class="topnav">
     <!-- <a [routerLink]="['home']" *ngIf="getUserSession() && !checkIfAdminUser()"><i class="fa fa-fw fa-home" ></i> Home</a>
     <a [routerLink]="['searchFlight']" *ngIf="getUserSession() && !checkIfAdminUser()"><i class="fa fa-fw fa-search"></i> Search</a>
     <a [routerLink]="['admin','manageFlights']" *ngIf="getUserSession() && checkIfAdminUser()"><i class="fa fa-fw fa-home"></i> Manage Airlines</a>
     <a [routerLink]="['contact']"><i class="fa fa-fw fa-envelope"></i> Contact</a>
     <a [routerLink]="['ticketHistory']" *ngIf="getUserSession() && !checkIfAdminUser()"><i class="fa fa-fw fa-envelope"></i> Ticket History</a> -->
-    <i [routerLink]="['searchStock']" class="fa fa-home" style="font-size:48px;color:white ; float: left;" aria-hidden="true"></i>
+    <a [routerLink]="['searchStock']"><i class="fa fa-fw fa-home"></i> Home</a>
     <a [routerLink]="['login']" style="float: right;" *ngIf="getUserSession()" (click)="clearSession()"><i class="fa fa-fw fa-user"></i> Logout</a>
     <a [routerLink]="['login']" style="float: right;" *ngIf="!getUserSession()"><i class="fa fa-fw fa-user"></i> Login</a>
     <a [routerLink]="['admin', 'manageCompanies']" *ngIf="getUserSession() ">Manage Companies</a>
