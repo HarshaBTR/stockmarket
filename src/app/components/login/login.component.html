@@ -1,0 +1,18 @@
+<div class="container">
+    <form [formGroup]="loginForm" (ngSubmit)="getLogin()">
+        <div class="row">
+            <div class="col">
+                <input type="text" #name placeholder="user name" name="name" formControlName="name" required>
+                <p *ngIf = "loginForm.controls.name.dirty && !!loginForm.controls.name.errors">
+                    <span *ngIf = "!!loginForm.controls.name.errors.required" class="error">user name cannot be empty.</span>
+                </p>
+                <input type="password" placeholder="Password" name="password" formControlName="password" required>
+                <button [disabled]="loginForm.invalid" type="submit"  class="signupbtn">Login</button>
+                <p *ngIf = "inalidCredential">
+                    <span  class="error">Invalid Credentials.</span>
+                </p>
+            </div>
+
+        </div>
+    </form>
+</div>
