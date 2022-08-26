@@ -1,5 +1,5 @@
 {
-  "name": "stock-market-app",
+  "name": "stock-management",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",

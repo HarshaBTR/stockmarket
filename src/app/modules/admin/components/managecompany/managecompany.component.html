@@ -52,9 +52,9 @@
     <tr *ngFor="let comp of company">
       <td>{{comp.companyName}}</td>
       <td>{{comp.companyCode}}</td>
-      <td>{{comp.companyCeo}}</td>
-      <td>{{comp.companyTurnover}}</td>
-      <td>{{comp.companyWebsite}}</td>
+      <td>{{comp.companyCEO}}</td>
+      <td>{{comp.turnOver}}</td>
+      <td>{{comp.webSite}}</td>
       <td>{{comp.stockExchange}}</td>
       <td><button type="button" class="deletebtn" (click)="deleteCompanyByCode(comp.companyCode)"><i
             class="fa fa-fw fa-trash"></i>Delete</button></td>

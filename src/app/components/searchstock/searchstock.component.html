@@ -5,7 +5,6 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <div class="content">
   <!-- <p>You selected {{selected}}</p> -->
-  <p><b><i>Welcome {{userService.user.email}},</i></b></p>
 
   <!-- <p><b><i>Welcome,</i></b></p> -->
 
@@ -65,20 +64,22 @@
   <br>
   <br>
 
-  <table id="stocks" *ngIf="viewSearchResults()">
+  <table id="stocks" *ngIf="viewSearchResults() && getCompanyByRange">
     <tr>
       <th>Code</th>
       <th>Stock Price</th>
+      <th>Date</th>
     </tr>
     <tr *ngFor="let stock of stocks">
       <td>{{stock.companyCode}}</td>
       <td>{{stock.stockPrice}}</td>
+      <td>{{stock.createdAt}}</td>
     </tr>
   </table>
   <br>
   <br>
 
-  <table id="stocks"  *ngIf="!getCompanyByCode && ! getCompanyByRange">
+  <table id="stocks"  *ngIf=" !getCompanyByCode &&!getCompanyByRange">
     <tr>
       <th>Name</th>
       <th>Code</th>
@@ -91,9 +92,33 @@
     <tr *ngFor="let comp of company">
       <td>{{comp.companyName}}</td>
       <td>{{comp.companyCode}}</td>
-      <td>{{comp.companyCeo}}</td>
-      <td>{{comp.companyTurnover}}</td>
-      <td>{{comp.companyWebsite}}</td>
+      <td>{{comp.companyCEO}}</td>
+      <td>{{comp.turnOver}}</td>
+      <td>{{comp.webSite}}</td>
+      <td>{{comp.stockExchange}}</td>
+      <!-- <td><button type="button" class="deletebtn" (click)="deleteCompanyByCode(comp.companyCode)"><i
+            class="fa fa-fw fa-trash"></i>Delete</button></td>
+      <td><button  type="button" class="editbtn" (click)="showUpdateForm(comp)"><i
+            class="fa fa-fw fa-edit"></i>Edit</button></td> -->
+    </tr>
+
+  </table>
+  <table id="stocks"  *ngIf=" comanyCode && getCompanyByCode && !getCompanyByRange">
+    <tr>
+      <th>Name</th>
+      <th>Code</th>
+      <th>CEO</th>
+      <th>TurnOver</th>
+      <th>Website</th>
+      <th>Exchange</th>
+    </tr>
+    
+    <tr *ngFor="let comp of company">
+      <td>{{comp.companyName}}</td>
+      <td>{{comp.companyCode}}</td>
+      <td>{{comp.companyCEO}}</td>
+      <td>{{comp.turnOver}}</td>
+      <td>{{comp.webSite}}</td>
       <td>{{comp.stockExchange}}</td>
       <!-- <td><button type="button" class="deletebtn" (click)="deleteCompanyByCode(comp.companyCode)"><i
             class="fa fa-fw fa-trash"></i>Delete</button></td>

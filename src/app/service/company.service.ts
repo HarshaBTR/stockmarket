@@ -8,13 +8,15 @@ export class CompanyService {
     private searchurl: string = "http://localhost:8989/searchmanagement/api/v1.0/market";
 
     private comp= new Company();
+    admin:boolean=false;
+     
 
     public set company(newCompany: Company) {
         this.comp.companyCode = newCompany.companyCode;
         this.comp.companyName = newCompany.companyName;
-        this.comp.companyCeo = newCompany.companyCeo;
-        this.comp.companyTurnover = newCompany.companyTurnover;
-        this.comp.companyWebsite = newCompany.companyWebsite;
+        this.comp.companyCEO = newCompany.companyCEO;
+        this.comp.turnOver = newCompany.turnOver;
+        this.comp.webSite = newCompany.webSite;
         this.comp.stockExchange = newCompany.stockExchange;
 
     }

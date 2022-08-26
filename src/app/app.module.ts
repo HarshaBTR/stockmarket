@@ -13,7 +13,6 @@ import { SearchstockComponent } from './components/searchstock/searchstock.compo
 import { CompanyService } from './service/company.service';
 import { StockService } from './service/stock.service';
 import { SearchService } from './service/search.service';
-import { UserService } from './service/user.service';
 
 const routes: Routes = [
   { path: "login", component: LoginComponent },
@@ -36,7 +35,7 @@ const routes: Routes = [
     AppRoutingModule,
     RouterModule.forRoot(routes), ReactiveFormsModule,HttpClientModule
   ],
-  providers: [CompanyService,StockService,SearchService,UserService],
+  providers: [CompanyService,StockService,SearchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

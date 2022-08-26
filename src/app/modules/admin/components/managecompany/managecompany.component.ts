@@ -39,6 +39,7 @@ export class ManagecompanyComponent implements OnInit {
 
 
   ngOnInit(): void {
+    
   }
 
   showAddForm() {

@@ -36,18 +36,15 @@
   
   <table id="companies">
     <tr>
-      <th>Name</th>
       <th>Code</th>
       <th>Stock Price</th>
+      <th>Date</th>
     </tr>
     
     <tr *ngFor="let st of stock">
       <td>{{st.companyCode}}</td>
       <td>{{st.stockPrice}}</td>
-      <!-- <td><button type="button" class="deletebtn" (click)="deleteCompanyByCode(comp.companyCode)"><i
-            class="fa fa-fw fa-trash"></i>Delete</button></td>
-      <td><button  type="button" class="editbtn" (click)="showUpdateForm(comp)"><i
-            class="fa fa-fw fa-edit"></i>Edit</button></td> -->
+      <td>{{st.createdAt}}</td>
     </tr>
 
   </table>

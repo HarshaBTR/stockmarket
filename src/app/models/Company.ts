@@ -3,9 +3,9 @@ import { Stock } from "./Stock";
 export class Company {
     companyName: string = "";
     companyCode: string = "";
-    companyCeo: string = "";
-    companyTurnover:number=0;
-    companyWebsite: string = "";
+    companyCEO: string = "";
+    turnOver:number=0;
+    webSite: string = "";
     stockExchange: string = ""; 
     stocks : Stock[] =[];
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from 'src/app/service/user.service';
+import { Company } from 'src/app/models/Company';
+import { CompanyService } from 'src/app/service/company.service';
 
 @Component({
   selector: 'app-header',
@@ -9,30 +10,28 @@ import { UserService } from 'src/app/service/user.service';
 export class HeaderComponent implements OnInit {
 
   userSessionValid:boolean=false;
-  constructor(public userService:UserService) { }
+  admin:boolean=false
+ 
+  constructor(public companyService:CompanyService) { }
 
   ngOnInit(): void {
+  this.admin=  this.companyService.admin
+  
   }
 
   headerStyle = {
     color: "white",
-    "background-color": "#04AA6D",
+    "background-color": " #1784bf",
     "font-style": "italic"
   }
 
   
   getUserSession(){
-    return this.userService.user.valid;
+    console.log(this.companyService.admin)
+    return this.companyService.admin;
    }
    clearSession(){
-     sessionStorage.clear();
-     this.userService.user.valid=false;
+     
+     this.companyService.admin=false;
    }
- 
- checkIfAdminUser(){
-   if(this.userService.user.email=="admin@gmail.com"){
-     return true;
-   }
-   return false;
- }
 }
